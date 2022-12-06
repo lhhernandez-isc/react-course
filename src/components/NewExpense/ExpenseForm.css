@@ -1,0 +1,22 @@
+.expense-form-control {
+  @apply flex flex-col space-y-2 items-start 
+  md:flex-row md:space-y-0 md:items-center md:space-x-5;
+}
+
+.expense-form-control label {
+  @apply text-lg font-bold;
+}
+
+.expense-form-control input {
+  @apply p-2 outline outline-0 border-0 rounded-lg w-64;
+}
+
+.expense-form-control button {
+    @apply 
+    px-4 py-2 outline outline-0 border-0 rounded-lg 
+    bg-indigo-700 text-white;
+  }
+
+/* .expense-form-control label{
+    @apply 
+} */
