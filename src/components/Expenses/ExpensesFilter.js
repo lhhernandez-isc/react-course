@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 const ExpensesFilter = (props) => {
-  const [year, setYear] = useState(new Date().getFullYear());
   const yearChangeHandler = (event) => {
     props.onChangeYear( event.target.value );
   };
@@ -13,7 +12,7 @@ const ExpensesFilter = (props) => {
       <p className="text-white text-lg font-bold">Filter by year</p>
       <select 
         onChange={yearChangeHandler} 
-        value={year}
+        value={props.selected}
         className="px-8 py-2 rounded-lg bg-white"
     >
         <option value="2022">2022</option>
