@@ -7,40 +7,16 @@ const ExpenseForm = (props) => {
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
 
-  //   const [userInput, setUserInput] = useState({
-  //     enteredTitle: "",
-  //     enteredAmount: "",
-  //     enteredDate: "",
-  //   });
-
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
-    // setUserInput({
-    //   ...userInput,
-    //   enteredTitle: event.target.value,
-    // });
-    // setUserInput((prevState) => {
-    //   return {
-    //     ...prevState,
-    //     enteredTitle: event.target.value,
-    //   };
-    // });
   };
 
   const amountChangeHandler = (event) => {
     setEnteredAmount(event.target.value);
-    // setUserInput({
-    //   ...userInput,
-    //   enteredAmount: event.target.value,
-    // });
   };
 
   const dateChangeHandler = (event) => {
     setEnteredDate(event.target.value);
-    // setUserInput({
-    //   ...userInput,
-    //   enteredDate: event.target.value,
-    // });
   };
 
   const submitHandler = (event) => {
@@ -48,7 +24,7 @@ const ExpenseForm = (props) => {
 
     const expenseData = {
       title: enteredTitle,
-      amount: enteredAmount,
+      amount: +enteredAmount,
       date: new Date(enteredDate),
     };
 
@@ -83,8 +59,17 @@ const ExpenseForm = (props) => {
         <label>Date</label>
         <input type="date" value={enteredDate} onChange={dateChangeHandler} />
       </div>
-      <div className="expense-form-control self-end row-start-3 col-start-2">
-        <button type="submit">Add Expense</button>
+      <div className="expense-form-control md:row-start-3 md:col-start-2 md:justify-self-center">
+        <button
+          type="button"
+          className="btn btn__red w-full"
+          onClick={props.onCancel}
+        >
+          Cancel
+        </button>
+        <button type="submit" className="btn btn__indigo w-full">
+          Add Expense
+        </button>
       </div>
     </form>
   );

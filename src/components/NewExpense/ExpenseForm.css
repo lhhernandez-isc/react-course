@@ -8,15 +8,17 @@
 }
 
 .expense-form-control input {
-  @apply p-2 outline outline-0 border-0 rounded-lg w-64;
+  @apply p-2 outline outline-0 border-0 rounded-lg w-full md:w-64;
 }
 
-.expense-form-control button {
-    @apply 
-    px-4 py-2 outline outline-0 border-0 rounded-lg 
-    bg-indigo-700 text-white;
-  }
+.btn {
+  @apply px-4 py-2 outline outline-0 border-0 rounded-lg text-white;
+}
 
-/* .expense-form-control label{
-    @apply 
-} */
+.btn__indigo{
+  @apply bg-indigo-700;
+}
+
+.btn__red {
+  @apply bg-red-700;
+}
